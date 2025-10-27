@@ -7,9 +7,51 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## How to build and use the component library locally in another react application
+1) npm run build
+2) npm link
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Then in the other app
+3) npm link react-library-starter-pack
+4) Then import the component
+
+```js
+import { Button } from 'react-library-starter-pack'
+```
+
+## Component Library setup configurations
+I configured the following into the package.json and vite-config.ts
+
+package.json
+```js
+  "type": "module",
+  "main": "dist/react-library-starter-pack.umd.js",
+  "module": "dist/react-library-starter-pack.es.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],  
+```
+
+vite-config.ts
+```js
+  build: {
+    lib: {
+      entry: './src/index.ts', // Entry file
+      name: 'MyLib',
+      formats: ['es', 'umd'],
+      fileName: (format) => `react-library-starter-pack.${format}.js`
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        }
+      }
+    }
+  }
+
+```
 
 ## Expanding the ESLint configuration
 

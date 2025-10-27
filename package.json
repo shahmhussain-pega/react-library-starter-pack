@@ -1,8 +1,12 @@
 {
-  "name": "test-react-library",
+  "name": "react-library-starter-pack",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/react-library-starter-pack.umd.js",
+  "module": "dist/react-library-starter-pack.es.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],  
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

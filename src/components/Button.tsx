@@ -1,7 +1,7 @@
 
 const Button: React.FC = () => {
     return (<>
-        <button>hello</button>
+        <button>another test 2</button>
     </>)
 }
 

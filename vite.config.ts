@@ -6,20 +6,19 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: 'src/index.ts',
-      name: 'TestReactLibrary',
-      formats: ['es', 'cjs'],
-      fileName: (format) => `test-react-library.${format}.js`,
+      entry: './src/index.ts', // Entry file
+      name: 'MyLib',
+      formats: ['es', 'umd'],
+      fileName: (format) => `react-library-starter-pack.${format}.js`
     },
     rollupOptions: {
-      // Exclude peer deps (so users use their own React)
       external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
-    },
-  },
+          'react-dom': 'ReactDOM'
+        }
+      }
+    }
+  }
 })
