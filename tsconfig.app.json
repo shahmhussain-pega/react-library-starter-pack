@@ -5,7 +5,11 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "types": ["vite/client"],
+    "types": [
+      "vite/client",
+      "vitest/globals", // TODO seperate into a new test file config
+      "@testing-library/jest-dom" // TODO seperate into a new test file config
+    ],
     "skipLibCheck": true,
     "declaration": true,
 
