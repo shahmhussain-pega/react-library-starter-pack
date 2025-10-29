@@ -56,13 +56,13 @@ export const Small: Story = {
 export const Button: Story = {
   args: {
     primary: false,
-    label: "Button"
-  }
+    label: 'Button',
+  },
 };
 
 export const FancyButton: Story = {
   args: {
     primary: false,
-    label: "Button"
-  }
+    label: 'Button',
+  },
 };
