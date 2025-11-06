@@ -10,14 +10,29 @@ import path from 'path';
 import dts from 'vite-plugin-dts';
 // @ts-expect-error Needed as there is no declaration file for vite-plugin-eslint
 import eslint from 'vite-plugin-eslint';
+import libCss from 'vite-plugin-libcss';
 
 // const dirname =
 //   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@moduk': path.resolve(__dirname, 'node_modules/@moduk'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Allow @import from node_modules
+        additionalData: '',
+      },
+    },
+  },
   plugins: [
     react(),
+    libCss(),
     eslint({
       cache: false,
       include: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
@@ -29,6 +44,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    cssCodeSplit: true,
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       // Entry file

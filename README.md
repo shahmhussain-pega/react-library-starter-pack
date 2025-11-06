@@ -19,6 +19,39 @@ Then in the other app
 import { Button } from 'react-library-starter-pack'
 ```
 
+## How to publish the library
+1) Add .npmrc file into your project with the following config
+@shahmhussain-pega:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<ADD-YOUR-TOKEN>
+
+2) Upgrade the version property in the package.json
+e.g. "version": "0.0.1" to "version": "0.0.2" 
+
+3) Run npm publish
+```
+  npm publish
+```
+
+## How to consume the library in another app
+
+1) Add a .npmrc file into the root of the project with the following config
+@shahmhussain-pega:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<ADD-YOUR-TOKEN>
+
+2) Run npm install on the package e.g.
+```
+npm i @shahmhussain-pega/react-library-starter-pack
+```
+
+3) Consume the required component along with the global CSS
+```js
+// Component
+import { Accordion } from "@shahmhussain-pega/react-library-starter-pack";
+// CSS 
+import "@shahmhussain-pega/react-library-starter-pack/dist/index.css";
+```
+
+
 ## Component Library setup configurations
 I configured the following into the package.json and vite-config.ts
 

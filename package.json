@@ -1,11 +1,19 @@
 {
-  "name": "react-library-starter-pack",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@shahmhussain-pega/react-library-starter-pack",
+  "private": false,
+  "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahmhussain-pega/react-library-starter-pack.git"
+  },
   "type": "module",
   "main": "dist/react-library-starter-pack.umd.js",
   "module": "dist/react-library-starter-pack.es.js",
   "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "files": [
     "dist"
   ],
@@ -22,8 +30,10 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "@moduk/frontend": "^2.0.31",
+    "govuk-frontend": "^5.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
@@ -37,8 +47,8 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.6.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "@vitejs/plugin-react": "^5.0.4",
@@ -55,6 +65,7 @@
     "jsdom": "^27.0.1",
     "playwright": "^1.56.1",
     "prettier": "^3.6.2",
+    "sass": "^1.93.2",
     "storybook": "^9.1.15",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
