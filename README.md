@@ -8,11 +8,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## How to build and use the component library locally in another react application
+In the current project, within the top directory run the below
 1) npm run build
 2) npm link
 
-Then in the other app
-
+Then in the other app (e.g. test-react-sdk) within the top directory run the below
 3) npm link react-library-starter-pack
 4) Then import the component
 
