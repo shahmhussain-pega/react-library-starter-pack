@@ -12,6 +12,7 @@ Currently, two official plugins are available:
 2) npm link
 
 Then in the other app
+
 3) npm link react-library-starter-pack
 4) Then import the component
 
