@@ -16,7 +16,7 @@ Then in the other app
 4) Then import the component
 
 ```js
-import { Button } from 'react-library-starter-pack'
+import { Accordion } from 'react-library-starter-pack'
 ```
 
 ## How to publish the library

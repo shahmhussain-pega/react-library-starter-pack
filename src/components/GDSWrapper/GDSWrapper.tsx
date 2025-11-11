@@ -11,18 +11,6 @@ import { initAll } from '@moduk/frontend/dist/client/moduk-frontend.umd.js';
 export function withGDSWrapper(WrappedComponent: React.FC): React.FC {
   return function NewComponent() {
     useEffect(() => {
-      // TODO improve to avoid storybook issue
-      // console.log('updating with 1ms');
-      // setTimeout(() => {
-      //   console.log('initAll');
-      //   initAll();
-      // }, 1);
-      // setTimeout(() => {
-      //   // needed to add styling to components
-      //   console.log('adding govuk-frontend-supported');
-      //   document.body.classList.add('govuk-frontend-supported');
-      // }, 0);
-      // logic needed for loading js into components
       initAll();
       // needed to add styling to components
       document.body.classList.add('govuk-frontend-supported');
